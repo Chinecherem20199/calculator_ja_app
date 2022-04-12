@@ -1,0 +1,14 @@
+
+##color palettes
+dark_blue = hsl(215,98%,50%)
+light_blue = hsl(206,94%,52%)
+dark_gray =hsl(212,11%,33%)
+black = hsl(220,75%,3%)
+dark_snow = hsl(229,8%,72%)
+snow = hsl(240,2%,90%)
+orange = hsl(17,68%,59%)
+
+
+## design credit
+Noer hidayat
+https://dribbble.com/shots/15893427-Calculator-app
