@@ -9,6 +9,3 @@ snow = hsl(240,2%,90%)
 orange = hsl(17,68%,59%)
 
 
-## design credit
-Noer hidayat
-https://dribbble.com/shots/15893427-Calculator-app
