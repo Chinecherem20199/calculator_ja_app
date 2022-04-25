@@ -1,104 +1,173 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
 
-:root{
+:root {
     --main-font: 'EB Garamond', serif, 'Open Sans', 'Poppins', sans-serif;
-    
+
 }
 
-body{
+body {
     background-color: hsl(229, 8%, 72%);
-    font-family:'EB Garamond', serif,'Open Sans','Poppins',sans-serif ;
+    font-family: 'EB Garamond', serif, 'Open Sans', 'Poppins', sans-serif;
 }
 
-
-.container{
-max-width: 400px;
-margin: 10vh auto 0 auto;
-height: 100%;
-border-radius: 25px;
-/* padding: 10px; */
-padding: 0 auto;
-background-color: hsl(196, 98%, 55%);
-box-shadow: 0px 0px 43px 17px hsl(212, 11%, 33%);
-}
-.display{
-    
-    text-align: right;
-    max-width: 0 auto;
-    padding: 6px 8px;
-    margin: 10px;
-    font-size: 25px;
-    margin-bottom: 30px;
-    
-    
-    
-}
-.display-1 {
-    color: hsl(240, 2%, 90%);
-    font-size: 15px;
-    margin-top: 30px;
-    font-weight: 400;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+    transition: all 0.5s ease;
 }
 
-.display-2 {
-    color: hsl(240, 2%, 90%);
-    font-size: 25px;
-    margin-bottom: 20px;
-    margin-top: 30px;
-    font-weight: 700;
+a {
+    text-decoration: none;
+    color: #fff;
 }
-.grid {
+
+body {
+    background-image: linear-gradient(to bottom right, hsl(225, 11%, 27%), hsl(121, 39%, 53%));
+}
+
+.container {
+    /* height: 100vh;
+    width: 100vw; */
+    height: 100vh;
+    width: 100vw;
     display: grid;
-    grid-template-columns: repeat(4, 5fr);
-    border-bottom: 1px solid hsl(229, 8%, 72%);
-    border-left: 1px solid hsl(229, 8%, 72%);
-    background-color: hsl(240, 2%, 90%);
-    padding-bottom: 10px;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    font-weight: 700;
-    color: hsl(212, 11%, 33%);
+    place-items: center;
+}
 
-    /* box-shadow: 0px 0px 43px 17px rgba(153, 153, 153, 1); */
+.calculator {
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 30px #000;
 }
-.grid > div{
-    border: hsl(212, 11%, 33%);
-   
-}
-div{
-    border: 0.5px solid hsl(212, 11%, 33%);
-    line-height: 80px;
-    text-align: center;
-    font-size: 1em;
+
+.theme-toggler {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #fff;
     cursor: pointer;
-    
-}
-div:hover {
-    background-color: hsl(17, 68%, 59%);
-    color: hsl(240, 2%, 90%);
-    transition: 0.5s ease-in-out;
-}
-.equal {
-    background-color: hsl(197, 90%, 52%);
-    color: hsl(240, 2%, 90%);
-    margin: 5px;
+    z-index: 1;
 }
 
-
-h3{
-    text-align: center;
-    justify-content: center;
-    font-size: 15px;
-    color: hsl(240,2%,90%);
-    padding-top: 10px;
-    /* margin-top: 20px; */
-    
+.theme-toggler.active {
+    color: #333;
 }
-.btn{
-    color: hsl(206, 94%, 52%);
+
+.theme-toggler.active ::before {
+    background-color: #fff;
+}
+
+.theme-toggler ::before {
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #333;
+    z-index: -1;
+}
+
+#display {
+    margin: 0.10px;
+    height: 150px;
+    width: auto;
+    max-width: 270px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
     font-weight: 700;
-    
+    font-size: 2.75rem;
+    margin-bottom: 20px;
+    overflow-x: scroll;
 }
-.crl-btn{
-    color: hsl(17, 68%, 59%);
+
+#display::-webkit-scrollbar {
+    display: block;
+    height: 3px;
+}
+
+button {
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button#equals {
+    width: 130px;
+}
+
+/* Light Theme */
+.calculator {
+    background-color: #fff;
+}
+
+.calculator #display {
+    color: #0a1e23;
+}
+
+.calculator button #clear {
+    background-color: #ffd5d8;
+    color: #f967f3;
+}
+
+.calculator button.btn-number {
+    background-color: #c3eaff;
+    color: #000;
+}
+
+.calculator button.btn-operator {
+    background-color: #ffd0fd;
+    color: #f967f3;
+}
+
+.calculator button.btn-equal {
+    background-color: #ffd0fd;
+    color: #f967f3;
+}
+
+/* Dark theme */
+.calculator.dark {
+    background-color: hsl(225, 11%, 35%);
+
+}
+
+.calculator.dark #display {
+    color: #f8fafd;
+}
+
+.calculator.dark button#clear {
+    background-color: hsl(128, 39%, 52%);
+    color: hsl(0, 0%, 100%);
+}
+
+.calculator.dark button.btn-number {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(213, 12%, 18%);
+}
+
+.calculator.dark button.btn-operator {
+    background-color: hsl(128, 39%, 52%);
+    color: hsl(0, 0%, 100%);
+}
+
+.calculator.dark button.btn-equal {
+    background-color: hsl(128, 39%, 52%);
+    color: hsl(0, 0%, 100%);
 }
