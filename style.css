@@ -40,9 +40,9 @@ body {
     position: relative;
     height: auto;
     width: auto;
-    padding: 20px;
+    padding: 15px;
     border-radius: 25px;
-    box-shadow: 0 0 30px #000;
+    box-shadow: 0 0 30px hsl(224, 12%, 39%);
 }
 
 .theme-toggler {
@@ -55,7 +55,8 @@ body {
 }
 
 .theme-toggler.active {
-    color: #333;
+    color: hsl(224, 12%, 39%)
+    /* hsl(225, 11%, 35%); */
 }
 
 .theme-toggler.active ::before {
@@ -70,7 +71,7 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background-color: #333;
+    background-color: hsl(224, 12%, 39%);
     z-index: -1;
 }
 
@@ -119,7 +120,7 @@ button#equals {
 }
 
 .calculator #display {
-    color: #0a1e23;
+    color: hsl(224, 12%, 39%);
 }
 
 .calculator button #clear {
@@ -129,7 +130,7 @@ button#equals {
 
 .calculator button.btn-number {
     background-color: #c3eaff;
-    color: #000;
+    color: hsl(224, 12%, 39%);
 }
 
 .calculator button.btn-operator {
@@ -159,7 +160,7 @@ button#equals {
 
 .calculator.dark button.btn-number {
     background-color: hsl(0, 0%, 100%);
-    color: hsl(213, 12%, 18%);
+    color: hsl(224, 12%, 39%);
 }
 
 .calculator.dark button.btn-operator {
