@@ -45,7 +45,14 @@ body {
     box-shadow: 0 0 30px hsl(224, 12%, 39%);
 }
 
-
+.theme-toggler {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+}
 
 .theme-toggler.active {
     color: hsl(224, 12%, 39%)
